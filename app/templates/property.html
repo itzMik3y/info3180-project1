@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ url_for('get_image', filename=property.photo) }}" class="card-img" alt="{{ property.title }}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title">{{ property.title }} - {{ property.type }}</h3>
+              <p class="card-text"><small class="text-muted">{{ property.location }}</small></p>
+              <p class="card-text">{{ property.description }}</p>
+              <p class="card-text"><strong>Price: {{ property.price }}</strong></p>
+              <p class="card-text">Bedrooms: {{ property.num_rooms }} | Bathrooms: {{ property.num_bathrooms }}</p>
+              <!-- Add other property details here -->
+              <a href="mailto:realtor@example.com" class="btn btn-primary">Email Realtor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
